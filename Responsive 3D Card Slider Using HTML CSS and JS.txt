@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:linear-gradient(18deg,rgb(0, 40, 59),rgb(0, 0, 0));
+}
+.slider-wrapper {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 70px 55px;
+}
+.card-list .card-item {
+  height: auto;
+  color: #61b8ff;
+  user-select: none;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.2);
+}
+.card-list .card-item .user-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 40%;
+  margin-bottom: 40px;
+  border: 3px solid #ffffff;
+  padding: 5px;
+}
+.card-list .card-item .user-profession {
+  font-size: 1.15rem;
+  color: #e3e3e3;
+  font-weight: 500;
+  margin: 14px 0 40px;
+}
+.card-list .card-item .message-button {
+  font-size: 1.25rem;
+  padding: 10px 35px;
+  color: #030728;
+  border-radius: 20%;
+  font-weight: 500;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+.card-list .card-item .message-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #ffffff;
+}
+.slider-wrapper .swiper-pagination-bullet {
+  background: #ffffff;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.slider-wrapper .swiper-slide-button {
+  color: #fff;
+  margin-top: -55px;
+  transition: 0.2s ease;
+}
+.slider-wrapper .swiper-slide-button:hover {
+  color: #ffbf00;
+}
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+}
+    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D - Card Slider</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container swiper">
+<div class="slider-wrapper">
+<div class="card-list swiper-wrapper">
+<div class="card-item swiper-slide">
+  <img src="image1.jpg" alt="User Image" class="user-image">
+  <h2 class="user-name">Kapil Sharma</h2>
+  <p class="user-profession">Comendian</p>
+  <button class="message-button">Follow me</button>
+</div>
+<div class="card-item swiper-slide">
+  <img src="image2.jpg" alt="User Image" class="user-image">
+  <h2 class="user-name">Virat Kohli</h2>
+  <p class="user-profession">Indian Cricketer</p>
+  <button class="message-button">Follow me</button>
+</div>
+<div class="card-item swiper-slide">
+  <img src="image6.jpg" alt="User Image" class="user-image">
+  <h2 class="user-name">Mary Kom</h2>
+  <p class="user-profession">Indian Boxer</p>
+  <button class="message-button">Follow me</button>
+</div>
+<div class="card-item swiper-slide">
+  <img src="image3.jpg" alt="User Image" class="user-image">
+  <h2 class="user-name">Sunil Chettri</h2>
+  <p class="user-profession">Indian Footballer</p>
+  <button class="message-button">Follow me</button>
+</div>
+<div class="card-item swiper-slide">
+  <img src="image4.jpg" alt="User Image" class="user-image">
+  <h2 class="user-name">Amitabh Bachchan</h2>
+  <p class="user-profession">Actor</p>
+  <button class="message-button">Follow me</button>
+</div>
+<div class="card-item swiper-slide">
+  <img src="image5.jpg" alt="User Image" class="user-image">
+  <h2 class="user-name">Arjit Singh</h2>
+  <p class="user-profession">Singer</p>
+  <button class="message-button">Follow me</button>
+</div>
+</div>
+       <!-- Swip button -->
+<div class="swiper-pagination"></div>
+  <div class="swiper-slide-button swiper-button-prev"></div>
+  <div class="swiper-slide-button swiper-button-next"></div>
+</div>
+</div>
+         <!-- JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ <script src="script.js">
+     const swiper = new Swiper('.slider-wrapper', {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    0: {slidesPerView: 1},
+    768: {slidesPerView: 2},
+    1024: {slidesPerView: 3}
+  }
+});
+ </script>
+</body>
+</html>
